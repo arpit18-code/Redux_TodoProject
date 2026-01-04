@@ -9,7 +9,6 @@ function App() {
   let [input, setInput] = useState("");
   let [EditedListText, setEditedListText] = useState("");
   let dispatch = useDispatch();
-  let [edit, setEdit] = useState(false);
 
   let TodoArray = useSelector((state) => state.TodoArray);
 
@@ -23,7 +22,6 @@ function App() {
   };
 
   let handleEditAndConfirm = (Todo) => {
-    setEdit((edit) => !edit);
     dispatch(
       EditTodo({
         id: Todo.id,
@@ -58,8 +56,6 @@ function App() {
               <List
                 Todo={Todo}
                 id={id}
-                edit={edit}
-                setEdit={setEdit}
                 handleRemoveTodo={handleRemoveTodo}
                 handleEditAndConfirm={handleEditAndConfirm}
                 input={input}
