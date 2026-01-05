@@ -22,14 +22,14 @@ let List = memo(
           id={id}
           type="checkbox"
           onChange={() => dispatch(CheckTodo(Todo))}
-          className="h-4 w-4 cursor-pointer"
+          className="h-4 w-4  mx-1 cursor-pointer"
           checked={Todo.IsCompleted}
         />
         <label htmlFor={id}>
           {edit ? (
             <input
               type="text"
-              className="border w-auto my-1 p-2 h-8"
+              className="border w-35 sm:w-45 lg:w-60 my-1 p-2 h-8"
               onChange={(e) => setEditedListText(e.target.value)}
             />
           ) : (

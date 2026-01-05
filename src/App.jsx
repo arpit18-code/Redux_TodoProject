@@ -13,8 +13,13 @@ function App() {
   let TodoArray = useSelector((state) => state.TodoArray);
 
   let handleAddToDo = () => {
-    dispatch(AddTodo(input));
-    setInput("");
+    if (input.trim() === "") {
+      alert("Please add a Todo list first !");
+      setInput("");
+    } else {
+      dispatch(AddTodo(input));
+      setInput("");
+    }
   };
 
   let handleRemoveTodo = (Todo) => {
