@@ -30,6 +30,7 @@ let List = memo(
             <input
               type="text"
               className="border w-35 sm:w-45 lg:w-60 my-1 p-2 h-8"
+              defaultValue={Todo.Text}
               onChange={(e) => setEditedListText(e.target.value)}
             />
           ) : (
